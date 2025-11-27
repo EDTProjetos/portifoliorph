@@ -19,7 +19,6 @@
     <!-- Ícones Lucide (com 'onload' para garantir o carregamento) -->
     <script>
         function initIcons() {
-            // Esta função é chamada pelo atributo 'onload' do script do Lucide
             if (typeof lucide !== 'undefined') {
                 lucide.createIcons();
             } else {
@@ -38,7 +37,7 @@
             background: linear-gradient(180deg, rgba(0, 36, 94, 0.08), rgba(0, 82, 181, 0.04));
         }
 
-        /* Estilo do Header com gradiente animado */
+        /* Header com gradiente animado */
         header {
             background: linear-gradient(120deg, #001B5D, #0052B5, #1E90FF, #001B5D);
             background-size: 200% auto;
@@ -57,7 +56,7 @@
             transition: opacity 0.3s ease-in-out;
         }
 
-        /* Keyframes para a animação do gradiente */
+        /* Animação gradiente header */
         @keyframes animatedGradient {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -74,6 +73,15 @@
         .reveal-on-scroll.is-visible {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        /* Animação de hover nos cards de stack */
+        .tech-card {
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+        }
+        .tech-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 20px 35px rgba(15, 23, 42, 0.18);
         }
     </style>
 
@@ -109,7 +117,6 @@
             
             <!-- Logo e Título -->
             <a href="#hero" class="flex-shrink-0 flex items-center">
-                <!-- Imagem da Logo (local) -->
                 <img class="h-16 w-16" src="LeahparCode.png" alt="[Logo da Leahpar Code]">
                 <span class="text-white font-bold text-2xl ml-3 hidden md:inline">Leahpar Code</span>
             </a>
@@ -117,8 +124,8 @@
             <!-- Navegação Desktop -->
             <div class="hidden md:flex items-center space-x-8">
                 <a href="#jornada" class="text-white hover:text-brand-blue-100 transition-colors duration-300 font-medium">Minha Jornada</a>
-                <a href="#tecnologias" class="text-white hover:text-brand-blue-100 transition-colors duration-300 font-medium">Ferramentas</a>
-                <a href="#projetos" class="text-white hover:text-brand-blue-100 transition-colors duration-300 font-medium">Projetos</a>
+                <a href="#tecnologias" class="text-white hover:text-brand-blue-100 transition-colors duração-300 font-medium">Ferramentas</a>
+                <a href="#projetos" class="text-white hover:text-brand-blue-100 transition-colors duração-300 font-medium">Projetos</a>
                 <a href="#contato" class="bg-white text-brand-blue-700 px-5 py-2 rounded-full font-semibold hover:bg-brand-blue-50 transition-transform duration-300 hover:scale-105">
                     Vamos Conversar
                 </a>
@@ -146,8 +153,6 @@
     <!-- SEÇÃO HERO -->
     <section id="hero" class="pt-32 pb-16 md:pt-48 md:pb-32 bg-gradient-to-b from-brand-blue-900 via-brand-blue-500 to-brand-blue-25 text-white">
         <div class="container mx-auto px-6 text-center flex flex-col items-center">
-            
-            <!-- Logo Principal (local) -->
             <div class="relative inline-block mb-8 reveal-on-scroll">
                 <img src="LeahparCode.png" alt="[Logo da Leahpar Code]" class="h-40 w-40 md:h-56 md:w-56 object-contain">
             </div>
@@ -175,13 +180,12 @@
                 <div class="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-left">
                     <!-- Coluna da Foto e Sobre o Fundador -->
                     <div class="flex flex-col items-center lg:items-start text-center lg:text-left reveal-on-scroll" style="transition-delay: 0.4s;">
-                        <!-- Foto do Raphael (assumindo eu.jpg local) -->
                         <div class="mb-8 p-1.5 bg-brand-blue-500 rounded-full inline-block shadow-lg">
                             <img src="eu.jpg" alt="Raphael Barbosa, Fundador da Leahpar Code" class="h-48 w-48 md:h-64 md:w-64 rounded-full object-cover">
                         </div>
                         <h3 class="text-2xl font-bold text-brand-gray-900 mb-4">Sobre mim, Raphael Barbosa</h3>
                         <p class="text-brand-gray-500 leading-relaxed max-w-lg">
-                            Desde 1998, quando nasci, sempre tive a visão tecnológica em minhas veias. Comecei como um entusiasta de jogos online e evoluí para um criador, buscando desenvolver meu próprio caminho na área. Me especializei em Front-end e criação de sites e, em seguida, aprofundei meus conhecimentos no universo Back-end para construir soluções completas e robustas. Essa paixão me tornou independente e se concretizou na Leahpar Code.
+                            Desde 1998, sempre vi tecnologia como caminho de liberdade. Comecei nos jogos online, migrei para o código e hoje transformo problemas reais em soluções digitais completas, do front ao back-end.
                         </p>
                     </div>
 
@@ -189,10 +193,10 @@
                     <div class="space-y-6 text-left lg:pl-8 reveal-on-scroll" style="transition-delay: 0.6s;">
                         <h3 class="text-2xl font-bold text-brand-gray-900 mb-4">Minha Visão para a Leahpar Code</h3>
                         <p class="text-brand-gray-500 leading-relaxed">
-                            A Leahpar Code nasceu da minha visão de transformar a complexidade do desenvolvimento web em soluções intuitivas e poderosas. Minha missão é criar ferramentas que não apenas resolvem problemas, mas que impulsionam a organização e a eficiência das empresas.
+                            A Leahpar Code nasceu para simplificar o digital: interfaces claras, sistemas organizados e dados fazendo sentido. Cada projeto é pensado como um ecossistema, não só como uma tela bonita.
                         </p>
                         <p class="text-brand-gray-500 leading-relaxed">
-                            Vejo a Leahpar Code como uma empresa revolucionária, focada em códigos robustos e assistência técnica de excelência. Cada projeto que desenvolvo é um ecossistema pensado para integração total, fluidez e performance, refletindo a essência do meu modo de desenvolvimento.
+                            Meu foco é entregar soluções estáveis, escaláveis e fáceis de usar, unindo design, código limpo e suporte próximo para empresas que querem profissionalizar seus processos.
                         </p>
                     </div>
                 </div>
@@ -209,63 +213,63 @@
                     Tecnologias que aplico nos projetos.
                 </p>
                 <p class="mt-4 text-lg text-brand-gray-500 reveal-on-scroll" style="transition-delay: 0.4s;">
-                    Stacks escolhidas para entregar performance, segurança e interfaces marcantes em cada entrega.
+                    Um conjunto direto de stacks para entregar performance, segurança e clareza em cada sistema.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- JavaScript -->
-                <div class="tech-card group bg-white/90 border border-brand-blue-100 rounded-3xl p-6 shadow-xl backdrop-blur reveal-on-scroll transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl hover:bg-white" style="transition-delay: 0.1s;">
+                <div class="tech-card group bg-white/90 border border-brand-blue-100 rounded-3xl p-6 shadow-xl backdrop-blur reveal-on-scroll hover:shadow-2xl hover:bg-white" style="transition-delay: 0.1s;">
                     <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-50 via-amber-200 to-orange-300 flex items-center justify-center mb-4 shadow-lg ring-2 ring-amber-200/70 overflow-hidden">
                         <img src="js.png" alt="Logo JavaScript" loading="lazy" class="w-12 h-12 object-contain transition duration-300 transform group-hover:scale-110">
                     </div>
                     <h3 class="text-xl font-bold text-brand-gray-900 mb-2">JavaScript</h3>
-                    <p class="text-brand-gray-500">Interações dinâmicas, automações e integrações usando a logo js.png como assinatura do front-end.</p>
+                    <p class="text-brand-gray-500">Interações dinâmicas, automações e lógica do front que dá vida às telas.</p>
                 </div>
 
                 <!-- HTML -->
-                <div class="tech-card group bg-white/90 border border-brand-blue-100 rounded-3xl p-6 shadow-xl backdrop-blur reveal-on-scroll transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl hover:bg-white" style="transition-delay: 0.2s;">
+                <div class="tech-card group bg-white/90 border border-brand-blue-100 rounded-3xl p-6 shadow-xl backdrop-blur reveal-on-scroll hover:shadow-2xl hover:bg-white" style="transition-delay: 0.2s;">
                     <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-50 via-orange-200 to-rose-300 flex items-center justify-center mb-4 shadow-lg ring-2 ring-orange-200/70 overflow-hidden">
                         <img src="html-5.png" alt="Logo HTML5" loading="lazy" class="w-12 h-12 object-contain transition duration-300 transform group-hover:scale-110">
                     </div>
                     <h3 class="text-xl font-bold text-brand-gray-900 mb-2">HTML</h3>
-                    <p class="text-brand-gray-500">Estruturas semânticas e acessíveis, sustentadas pela marca visual da html-5.png.</p>
+                    <p class="text-brand-gray-500">Base semântica e acessível que estrutura cada página e cada seção.</p>
                 </div>
 
                 <!-- CSS & Tailwind -->
-                <div class="tech-card group bg-white/90 border border-brand-blue-100 rounded-3xl p-6 shadow-xl backdrop-blur reveal-on-scroll transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl hover:bg-white" style="transition-delay: 0.3s;">
+                <div class="tech-card group bg-white/90 border border-brand-blue-100 rounded-3xl p-6 shadow-xl backdrop-blur reveal-on-scroll hover:shadow-2xl hover:bg-white" style="transition-delay: 0.3s;">
                     <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-sky-50 via-blue-200 to-indigo-300 flex items-center justify-center mb-4 shadow-lg ring-2 ring-sky-200/70 overflow-hidden">
                         <img src="css.png" alt="Logo CSS e Tailwind" loading="lazy" class="w-12 h-12 object-contain transition duration-300 transform group-hover:scale-110">
                     </div>
                     <h3 class="text-xl font-bold text-brand-gray-900 mb-2">CSS & Tailwind</h3>
-                    <p class="text-brand-gray-500">Visual polido com gradientes e animações suaves, carregando a identidade da css.png.</p>
+                    <p class="text-brand-gray-500">Layouts responsivos, animações suaves e identidade visual consistente.</p>
                 </div>
 
                 <!-- Bootstrap -->
-                <div class="tech-card group bg-white/90 border border-brand-blue-100 rounded-3xl p-6 shadow-xl backdrop-blur reveal-on-scroll transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl hover:bg-white" style="transition-delay: 0.4s;">
+                <div class="tech-card group bg-white/90 border border-brand-blue-100 rounded-3xl p-6 shadow-xl backdrop-blur reveal-on-scroll hover:shadow-2xl hover:bg-white" style="transition-delay: 0.4s;">
                     <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-50 via-violet-200 to-purple-300 flex items-center justify-center mb-4 shadow-lg ring-2 ring-purple-200/70 overflow-hidden">
-                        <img src="bootstrap.png" alt="Logo Bootstrap" loading="lazy" class="w-12 h-12 object-contain transition duration-300 transform group-hover:scale-110">
+                        <img src="bootsrap.png" alt="Logo Bootstrap" loading="lazy" class="w-12 h-12 object-contain transition duration-300 transform group-hover:scale-110">
                     </div>
                     <h3 class="text-xl font-bold text-brand-gray-900 mb-2">Bootstrap</h3>
-                    <p class="text-brand-gray-500">Protótipos e dashboards rápidos com consistência de design system.</p>
+                    <p class="text-brand-gray-500">Componentes prontos para montar dashboards e painéis com agilidade.</p>
                 </div>
 
                 <!-- GitHub -->
-                <div class="tech-card group bg-white/90 border border-brand-blue-100 rounded-3xl p-6 shadow-xl backdrop-blur reveal-on-scroll transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl hover:bg-white" style="transition-delay: 0.5s;">
+                <div class="tech-card group bg-white/90 border border-brand-blue-100 rounded-3xl p-6 shadow-xl backdrop-blur reveal-on-scroll hover:shadow-2xl hover:bg-white" style="transition-delay: 0.5s;">
                     <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-slate-50 via-slate-200 to-slate-400 flex items-center justify-center mb-4 shadow-lg ring-2 ring-slate-200/70 overflow-hidden">
                         <img src="github.png" alt="Logo GitHub" loading="lazy" class="w-12 h-12 object-contain transition duration-300 transform group-hover:scale-110">
                     </div>
                     <h3 class="text-xl font-bold text-brand-gray-900 mb-2">GitHub</h3>
-                    <p class="text-brand-gray-500">Versionamento com fluxos colaborativos e CI/CD, guiados pela logo github.png.</p>
+                    <p class="text-brand-gray-500">Versionamento, histórico limpo de código e colaboração entre projetos.</p>
                 </div>
 
                 <!-- NoSQL -->
-                <div class="tech-card group bg-white/90 border border-brand-blue-100 rounded-3xl p-6 shadow-xl backdrop-blur reveal-on-scroll transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl hover:bg-white" style="transition-delay: 0.6s;">
+                <div class="tech-card group bg-white/90 border border-brand-blue-100 rounded-3xl p-6 shadow-xl backdrop-blur reveal-on-scroll hover:shadow-2xl hover:bg-white" style="transition-delay: 0.6s;">
                     <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-lime-50 via-emerald-200 to-green-300 flex items-center justify-center mb-4 shadow-lg ring-2 ring-lime-200/70 overflow-hidden">
                         <img src="database.png" alt="Logo NoSQL" loading="lazy" class="w-12 h-12 object-contain transition duration-300 transform group-hover:scale-110">
                     </div>
                     <h3 class="text-xl font-bold text-brand-gray-900 mb-2">NoSQL</h3>
-                    <p class="text-brand-gray-500">Armazenamento flexível para dados em tempo real, eventos e documentos, destacado com a database.png.</p>
+                    <p class="text-brand-gray-500">Banco flexível para dados em tempo real, eventos e documentos.</p>
                 </div>
             </div>
         </div>
@@ -288,11 +292,11 @@
 
                 <!-- Projeto 1: Intranet -->
                 <div class="bg-white rounded-3xl shadow-xl overflow-hidden reveal-on-scroll" style="transition-delay: 0.1s;">
-                    <img src="portal_edt.png" alt="[Captura de tela do Portal EDT]" class="w-full h-56 object-cover cursor-pointer gallery-item" data-src="portal_edt.png" data-title="Portal EDT">
+                    <img src="intranet.png" alt="[Captura de tela do Portal EDT]" class="w-full h-56 object-cover cursor-pointer gallery-item" data-src="intranet.png" data-title="Portal EDT / Intranet">
                     <div class="p-8">
                         <h3 class="text-2xl font-bold text-brand-gray-900 mb-3">Sistemas de Intranet</h3>
                         <p class="text-brand-gray-500 mb-6">
-                            Um modelo de intranet solo para conectar áreas da empresa. Um ecossistema conciso de integração com painéis, hub de notícias e muito mais.
+                            Uma intranet enxuta para conectar áreas, centralizar informações e facilitar o dia a dia das equipes.
                         </p>
                         <a href="https://hiddenmodel.fly.dev/" target="_blank" class="font-medium text-brand-blue-500 hover:text-brand-blue-700 transition-colors duration-300 inline-flex items-center">
                             Ver Projeto
@@ -307,7 +311,7 @@
                     <div class="p-8">
                         <h3 class="text-2xl font-bold text-brand-gray-900 mb-3">Painel Disparos</h3>
                         <p class="text-brand-gray-500 mb-6">
-                            A solução completa para acompanhamento massivo de disparos. Dashboard com integração Blip, tempo real, interatividade e background analítico.
+                            Dashboard para monitorar disparos em massa com integração Blip e insights em tempo real.
                         </p>
                         <a href="https://paineldisparos.fly.dev/" target="_blank" class="font-medium text-brand-blue-500 hover:text-brand-blue-700 transition-colors duration-300 inline-flex items-center">
                             Ver Projeto
@@ -322,7 +326,7 @@
                     <div class="p-8">
                         <h3 class="text-2xl font-bold text-brand-gray-900 mb-3">Helpdesk Pro</h3>
                         <p class="text-brand-gray-500 mb-6">
-                            Sistema modular e profissional para organizar demandas. SLA, inteligência de informações em tempo real e criação de tickets únicos.
+                            Sistema de tickets com SLA, categorias e visão clara das demandas de TI ou suporte interno.
                         </p>
                         <a href="https://helpdeskpro.fly.dev/" target="_blank" class="font-medium text-brand-blue-500 hover:text-brand-blue-700 transition-colors duration-300 inline-flex items-center">
                             Ver Projeto
@@ -338,12 +342,11 @@
                     Galeria de Projetos
                 </h2>
                 <p class="mt-4 text-lg text-brand-gray-500 reveal-on-scroll" style="transition-delay: 0.2s;">
-                    Veja mais detalhes e telas das soluções que desenvolvi.
+                    Alguns detalhes visuais das interfaces que desenvolvi.
                 </p>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                
                 <div class="reveal-on-scroll" style="transition-delay: 0.1s;">
                     <img src="painel_disparos.png" alt="[Painel Disparos - Dashboard]" class="h-auto max-w-full rounded-lg cursor-pointer hover:opacity-80 transition-opacity duration-300 gallery-item" data-src="painel_disparos.png" data-title="Painel Disparos - Dashboard">
                 </div>
@@ -351,16 +354,16 @@
                     <img src="painel_disparos2.png" alt="[Painel Disparos - Gráficos]" class="h-auto max-w-full rounded-lg cursor-pointer hover:opacity-80 transition-opacity duration-300 gallery-item" data-src="painel_disparos2.png" data-title="Painel Disparos - Gráficos">
                 </div>
                 <div class="reveal-on-scroll" style="transition-delay: 0.3s;">
-                    <img src="portal_edt.png" alt="[Portal EDT - Página Inicial]" class="h-auto max-w-full rounded-lg cursor-pointer hover:opacity-80 transition-opacity duration-300 gallery-item" data-src="portal_edt.png" data-title="Portal EDT - Página Inicial">
+                    <img src="intranet.png" alt="[Portal EDT - Página Inicial]" class="h-auto max-w-full rounded-lg cursor-pointer hover:opacity-80 transition-opacity duration-300 gallery-item" data-src="intranet.png" data-title="Portal EDT - Página Inicial / Intranet">
                 </div>
                 <div class="reveal-on-scroll" style="transition-delay: 0.4s;">
-                    <img src="portal_edt2.png" alt="[Portal EDT - Acesso Administrativo]" class="h-auto max-w-full rounded-lg cursor-pointer hover:opacity-80 transition-opacity duration-300 gallery-item" data-src="portal_edt2.png" data-title="Portal EDT - Acesso Administrativo">
+                    <img src="portal_edt2.png" alt="[Portal EDT - Acesso Administrativo]" class="h-auto max-w-full rounded-lg cursor-pointer hover:opacity-80 transition-opacity duração-300 gallery-item" data-src="portal_edt2.png" data-title="Portal EDT - Acesso Administrativo">
                 </div>
                 <div class="reveal-on-scroll" style="transition-delay: 0.5s;">
-                    <img src="help_desk.png" alt="[Helpdesk Pro - Painel]" class="h-auto max-w-full rounded-lg cursor-pointer hover:opacity-80 transition-opacity duration-300 gallery-item" data-src="help_desk.png" data-title="Helpdesk Pro - Painel de Controle">
+                    <img src="help_desk.png" alt="[Helpdesk Pro - Painel]" class="h-auto max-w-full rounded-lg cursor-pointer hover:opacity-80 transition-opacity duração-300 gallery-item" data-src="help_desk.png" data-title="Helpdesk Pro - Painel de Controle">
                 </div>
                 <div class="reveal-on-scroll" style="transition-delay: 0.6s;">
-                    <img src="help_desk2.png" alt="[Helpdesk Pro - Abertura de Chamado]" class="h-auto max-w-full rounded-lg cursor-pointer hover:opacity-80 transition-opacity duration-300 gallery-item" data-src="help_desk2.png" data-title="Helpdesk Pro - Abertura de Chamado">
+                    <img src="help_desk2.png" alt="[Helpdesk Pro - Abertura de Chamado]" class="h-auto max-w-full rounded-lg cursor-pointer hover:opacity-80 transition-opacity duração-300 gallery-item" data-src="help_desk2.png" data-title="Helpdesk Pro - Abertura de Chamado">
                 </div>
             </div>
         </div>
@@ -377,7 +380,7 @@
                     Vamos construir algo incrível.
                 </p>
                 <p class="mt-6 text-lg text-brand-gray-500 max-w-2xl mx-auto reveal-on-scroll" style="transition-delay: 0.4s;">
-                    Estou disponível para novos projetos, colaborações ou apenas para trocar uma ideia. Entre em contato e vamos transformar sua visão em realidade.
+                    Aberto a novos projetos, parcerias e ideias. Me chama e a gente tira seu sistema do papel.
                 </p>
 
                 <div class="mt-12 flex flex-col md:flex-row justify-center items-center gap-8 reveal-on-scroll" style="transition-delay: 0.6s;">
@@ -401,7 +404,7 @@
                     </a>
 
                     <!-- LinkedIn -->
-                    <a href="https://www.linkedin.com/company/leahpar-code/" target="_blank" class="flex items-center text-lg font-medium text-brand-gray-800 hover:text-brand-blue-500 transition-colors duração-300">
+                    <a href="https://www.linkedin.com/company/leahpar-code/" target="_blank" class="flex items-center text-lg font-medium text-brand-gray-800 hover:text-brand-blue-500 transition-colors duration-300">
                         <svg class="w-7 h-7 mr-3 flex-shrink-0" viewBox="0 0 32 32" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="16" cy="16" r="16" fill="#0A66C2" />
                             <path fill="#FFFFFF" d="M12.19 13.03h-2.7V21h2.7v-7.97Zm-.14-2.51c0-.78-.58-1.41-1.5-1.41-.92 0-1.51.63-1.51 1.41 0 .78.58 1.41 1.48 1.41h.02c.92 0 1.51-.63 1.51-1.41ZM22 21v-4.21c0-2.25-1.2-3.3-2.81-3.3-1.29 0-1.88.71-2.21 1.21v-1.04h-2.7c.04.69 0 7.34 0 7.34h2.7v-4.1c0-.22.02-.44.08-.6.17-.44.55-.89 1.2-.89.85 0 1.19.67 1.19 1.66V21H22Z" />
@@ -423,17 +426,13 @@
 
     <!-- LIGHTBOX (MODAL DA GALERIA) -->
     <div id="lightbox" class="lightbox fixed inset-0 z-50 flex items-center justify-center p-4 hidden opacity-0">
-        
-        <!-- Fundo do Lightbox -->
         <div id="lightbox-backdrop" class="lightbox-backdrop fixed inset-0"></div>
 
-        <!-- Conteúdo do Lightbox -->
         <div class="relative z-10 max-w-4xl max-h-[90vh] bg-white rounded-lg shadow-2xl overflow-hidden">
             <img id="lightbox-img" src="" alt="[Imagem do projeto ampliada]" class="w-full h-auto object-contain max-h-[80vh]">
             <p id="lightbox-title" class="py-3 px-6 text-center font-medium text-brand-gray-800 bg-gray-50"></p>
         </div>
 
-        <!-- Botão de Fechar -->
         <button id="lightbox-close" class="absolute top-6 right-6 z-20 text-white rounded-full bg-black/30 hover:bg-black/60 p-2 transition-colors duration-300">
             <i data-lucide="x" class="w-8 h-8"></i>
         </button>
@@ -442,6 +441,7 @@
     <!-- SCRIPTS JS -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Menu mobile
             const menuBtn = document.getElementById('menu-btn');
             const menuDropdown = document.getElementById('menu-dropdown');
             menuBtn.addEventListener('click', () => {
@@ -462,13 +462,13 @@
                 }
             });
 
+            // Evita seção duplicada de Ferramentas
             const ferramentasSections = Array.from(document.querySelectorAll('[data-section="ferramentas"]'));
             if (ferramentasSections.length > 1) {
                 ferramentasSections.slice(1).forEach(section => section.remove());
             }
             const jornadaSection = document.getElementById('jornada');
             const ferramentasSection = ferramentasSections[0];
-
             if (jornadaSection && ferramentasSection) {
                 const ferramentasAntesDaJornada = jornadaSection.compareDocumentPosition(ferramentasSection) & Node.DOCUMENT_POSITION_PRECEDING;
                 if (ferramentasAntesDaJornada) {
@@ -476,6 +476,7 @@
                 }
             }
 
+            // Scroll reveal
             const revealElements = document.querySelectorAll('.reveal-on-scroll');
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
@@ -485,9 +486,9 @@
                     }
                 });
             }, { threshold: 0.1 });
-
             revealElements.forEach(el => observer.observe(el));
 
+            // Lightbox
             const lightbox = document.getElementById('lightbox');
             const lightboxBackdrop = document.getElementById('lightbox-backdrop');
             const lightboxImg = document.getElementById('lightbox-img');
@@ -509,11 +510,10 @@
             const closeLightbox = () => {
                 lightbox.classList.add('opacity-0');
                 setTimeout(() => lightbox.classList.add('hidden'), 300);
-            }
+            };
 
             lightboxClose.addEventListener('click', closeLightbox);
             lightboxBackdrop.addEventListener('click', closeLightbox);
-
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
                     closeLightbox();
